@@ -7,13 +7,13 @@ namespace CTest
 
         private int calcul(int val)
         {
-            div = val;
-            if (div != 0)
-            {
-                Thread.Sleep(1);
-                return (100 / div);
-            }
-            return 0;
+                div = val;
+                if (div != 0)
+                {
+                    Thread.Sleep(1);
+                    return (100 / div);
+                }
+                return 0;
         }
 
         public void AfficheB()
@@ -29,10 +29,13 @@ namespace CTest
         {
             for (int i = 1; i <= 100; i++)
             {
-                div = 0;
-                Console.WriteLine("AfficheC thread : " + Thread.CurrentThread.Name + " iteration " + i);
-                Console.WriteLine(calcul(i-1));
-                Thread.Sleep(100);
+                lock (this)
+                {
+                    div = 0;
+                    Console.WriteLine("AfficheC thread : " + Thread.CurrentThread.Name + " iteration " + i);
+                    Console.WriteLine(calcul(i));
+                    Thread.Sleep(100);
+                }
             }
         }
     }

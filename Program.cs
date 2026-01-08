@@ -28,12 +28,14 @@ class Program
         Thread thread3_fonction1 = new Thread(AfficheA);
         Thread thread4_fonction2 = new Thread(test.AfficheB);
         Thread thread5_fonction3 = new Thread(test.AfficheC);
+        Thread thread6_fonction3 = new Thread(test.AfficheC);
 
         thread1_fonction1.Name = "thread1_fonction1";
         thread2_fonction1.Name = "thread2_fonction1";
         thread3_fonction1.Name = "thread3_fonction1";
         thread4_fonction2.Name = "thread4_fonction2";
         thread5_fonction3.Name = "thread5_fonction3";
+        thread6_fonction3.Name = "thread6_fonction3";
 
         //thread1_fonction1.Start();
         //thread2_fonction1.Start();
@@ -45,7 +47,10 @@ class Program
 
 
         thread5_fonction3.Start();
+        thread6_fonction3.Start();
+
         thread5_fonction3.Join();
+        thread6_fonction3.Join();
 
         Console.WriteLine("Tous les threads ont terminés");
     }
