@@ -4,10 +4,10 @@ namespace CTest
     {
         public void AfficheB()
         {
-            while (true)
+            for (int i = 1; i <= 50; i++)
             {
-                Console.WriteLine("AfficheB thread : " + Thread.CurrentThread.Name);
-                Thread.Sleep(1000);
+                Console.WriteLine("AfficheB thread : " + Thread.CurrentThread.Name + " iteration " + i);
+                Thread.Sleep(100);
             }
         }
 
@@ -16,7 +16,7 @@ namespace CTest
             for (int i = 1; i <= 100; i++)
             {
                 Console.WriteLine("AfficheC thread : " + Thread.CurrentThread.Name + " iteration " + i);
-                Thread.Sleep(1000);
+                Thread.Sleep(100);
             }
         }
     }

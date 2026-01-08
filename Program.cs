@@ -39,6 +39,14 @@ class Program
         //thread2_fonction1.Start();
         //thread3_fonction1.Start();
         thread4_fonction2.Start();
+
+        // attent la fin du thread pour passer a la suite
+        thread4_fonction2.Join();
+
+
         thread5_fonction3.Start();
+        thread5_fonction3.Join();
+
+        Console.WriteLine("Tous les threads ont terminés");
     }
 }
